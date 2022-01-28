@@ -75,4 +75,21 @@
     </ion-slides>
   </div>
 
+  <div class="title ion-padding">
+    <h2 class="font-bold">All Products</h2>
+    <p>See all</p>
+  </div>
+
+  <div class="product-slider ion-padding-start">
+    <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+      <ion-slide *ngFor="let product of bestSellProducts">
+        <ion-col class="ion-text-left" routerLink="/item-details" routerDirection="forward">
+          <img src="{{ product.image }}" />
+          <p>${{ product.price }}</p>
+          <h6>{{ product.name }}</h6>
+        </ion-col>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
 </ion-content>
